@@ -1,0 +1,121 @@
+.carousel {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 40px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 24px;
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+    text-align: center;
+}
+
+.content {
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease;
+}
+
+.text {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: var(--text-main);
+    margin-bottom: 24px;
+    font-style: italic;
+}
+
+.quote {
+    color: var(--primary);
+    font-size: 2rem;
+    margin-bottom: 16px;
+    display: block;
+}
+
+.author {
+    margin-top: 16px;
+}
+
+.name {
+    font-weight: 700;
+    color: var(--text-main);
+    display: block;
+    font-size: 1.1rem;
+}
+
+.role {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-top: 4px;
+    display: block;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 40px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.3s ease;
+}
+
+.dotActive {
+    background: var(--primary);
+    transform: scale(1.2);
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    color: var(--text-main);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 1.2rem;
+}
+
+.arrow:hover {
+    background: var(--primary);
+    color: white;
+}
+
+.prev {
+    left: 20px;
+}
+
+.next {
+    right: 20px;
+}
+
+@media (max-width: 768px) {
+    .text {
+        font-size: 1.2rem;
+    }
+
+    .carousel {
+        padding: 40px 20px;
+    }
+
+    .arrow {
+        display: none;
+    }
+}

@@ -1,0 +1,57 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  name      String?
+  role      String   @default("admin")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Job {
+  id          String   @id @default(cuid())
+  slug        String   @unique // For URL friendly ID
+  title       String
+  type        String
+  location    String
+  description String
+  skills      String   // Stored as comma separated string or JSON if supported, here using simple string for SQLite simplicity or we can use another table. Let's use string for now and parse it.
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model ContactSubmission {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  company   String?
+  message   String
+  createdAt DateTime @default(now())
+}
+
+model JobApplication {
+  id          String   @id @default(cuid())
+  name        String
+  email       String
+  phone       String
+  jobTitle    String
+  resumePath  String
+  coverLetter String?
+  createdAt   DateTime @default(now())
+}
+
+model DemoRequest {
+  id        String   @id @default(cuid())
+  email     String
+  company   String?
+  createdAt DateTime @default(now())
+}

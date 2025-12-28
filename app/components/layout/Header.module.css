@@ -1,0 +1,78 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 48px;
+    background: rgba(10, 10, 15, 0.6);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    z-index: 100;
+    border-bottom: 1px solid var(--glass-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s var(--ease-out-expo);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    /* Removed text gradient styles to support image logo */
+}
+
+.nav {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    background: var(--bg-card);
+    padding: 6px 6px;
+    border-radius: 100px;
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(12px);
+}
+
+.navLink {
+    color: var(--text-muted);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    padding: 8px 16px;
+    border-radius: 100px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.navLink:hover {
+    color: var(--text-main);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.ctaButton {
+    background: var(--primary);
+    color: white;
+    padding: 10px 24px;
+    border-radius: 100px;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s var(--ease-out-expo);
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(98, 0, 217, 0.4);
+}
+
+.ctaButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(98, 0, 217, 0.5);
+    background: #7bdff2;
+    /* Lightened primary manually or effect? let's stick to simple hover or use filter */
+    filter: brightness(1.2);
+}

@@ -1,0 +1,122 @@
+{
+    "submissions": [],
+    "jobs": [
+        {
+            "id": "frontend-dev",
+            "title": "Frontend Developer",
+            "type": "Full-time",
+            "location": "Remote",
+            "description": "We are looking for a skilled Frontend Developer to build seamless and interactive user experiences using Next.js and React.",
+            "skills": [
+                "React",
+                "Next.js",
+                "TypeScript",
+                "Tailwind CSS"
+            ]
+        },
+        {
+            "id": "mobile-dev",
+            "title": "Mobile App Developer",
+            "type": "Full-time",
+            "location": "Remote",
+            "description": "Join our mobile team to craft high-performance native and cross-platform apps for iOS and Android.",
+            "skills": [
+                "React Native",
+                "Flutter",
+                "Swift",
+                "Kotlin"
+            ]
+        },
+        {
+            "id": "devops-engineer",
+            "title": "DevOps Engineer",
+            "type": "Full-time",
+            "location": "Remote",
+            "description": "Optimize our CI/CD pipelines and manage cloud infrastructure for scalability and security.",
+            "skills": [
+                "AWS",
+                "Docker",
+                "Kubernetes",
+                "Terraform"
+            ]
+        },
+        {
+            "id": "ui-ux-designer",
+            "title": "UI/UX Designer",
+            "type": "Full-time",
+            "location": "Remote",
+            "description": "Design intuitive wireframes and stunning interfaces that delight users and align with our brand identity.",
+            "skills": [
+                "Figma",
+                "Adobe XD",
+                "Prototyping",
+                "User Research"
+            ]
+        },
+        {
+            "id": "ai-ml-engineer",
+            "title": "AI/ML Engineer",
+            "type": "Full-time",
+            "location": "Remote",
+            "description": "Develop cutting-edge machine learning models and integrate AI solutions into our products.",
+            "skills": [
+                "Python",
+                "TensorFlow",
+                "PyTorch",
+                "NLP"
+            ]
+        },
+        {
+            "id": "product-manager",
+            "title": "Product Manager",
+            "type": "Full-time",
+            "location": "Remote",
+            "description": "Lead product strategy and collaborate with engineering teams to deliver market-leading solutions.",
+            "skills": [
+                "Agile",
+                "Roadmapping",
+                "Stakeholder Management",
+                "Jira"
+            ]
+        },
+        {
+            "id": "cloud-engineer",
+            "title": "Cloud Engineer",
+            "type": "Full-time",
+            "location": "Remote",
+            "description": "Architect and maintain secure cloud environments on AWS, Azure, or Google Cloud.",
+            "skills": [
+                "Cloud Security",
+                "Networking",
+                "Serverless",
+                "Monitoring"
+            ]
+        },
+        {
+            "id": "qa-engineer",
+            "title": "QA Engineer",
+            "type": "Full-time",
+            "location": "Remote",
+            "description": "Ensure software quality through automated and manual testing methodologies.",
+            "skills": [
+                "Selenium",
+                "Cypress",
+                "Jest",
+                "Load Testing"
+            ]
+        },
+        {
+            "id": "internship-program",
+            "title": "Software Engineering Intern",
+            "type": "Internship",
+            "location": "Remote",
+            "description": "Gain hands-on experience working on real-world projects with our engineering team.",
+            "skills": [
+                "JavaScript",
+                "React",
+                "Basic Algo & DS",
+                "Git"
+            ]
+        }
+    ]
+}

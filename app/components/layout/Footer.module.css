@@ -1,0 +1,206 @@
+.footer {
+    background: linear-gradient(180deg, var(--bg-base) 0%, #050508 100%);
+    border-top: 1px solid var(--glass-border);
+    padding: 80px 24px 40px;
+    margin-top: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 1px;
+    background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+    opacity: 0.5;
+}
+
+.content {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 60px;
+    margin-bottom: 60px;
+}
+
+.linksContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.column h4 {
+    font-size: 1.1rem;
+    color: var(--text-main);
+    margin-bottom: 24px;
+    font-weight: 700;
+}
+
+.link {
+    display: block;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.link:hover {
+    color: var(--primary);
+    transform: translateX(4px);
+    text-shadow: 0 0 10px rgba(98, 0, 217, 0.4);
+}
+
+.contactInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.brand h3 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+    background: linear-gradient(90deg, #fff, var(--secondary));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.02em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Optional: add logo icon if needed, but text is fine */
+
+.callUs {
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+
+.phone {
+    color: #3b82f6;
+    /* Bright blue for phone */
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.phone:hover {
+    text-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+}
+
+.address {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.address p {
+    margin: 0;
+}
+
+.email {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.email:hover {
+    color: var(--primary);
+}
+
+.socials {
+    display: flex;
+    gap: 16px;
+    margin-top: 10px;
+}
+
+.socialIcon {
+    color: var(--text-muted);
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.socialIcon:hover {
+    color: var(--primary);
+    transform: translateY(-2px);
+    filter: drop-shadow(0 0 5px var(--primary));
+}
+
+.bottom {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding-top: 30px;
+    border-top: 1px solid var(--glass-border);
+    text-align: left;
+    /* Image shows copyright on left? Wait, verify image. */
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .linksContainer {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .contactInfo {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: start;
+    }
+
+    .callUs,
+    .address,
+    .brand {
+        flex: 1;
+        min-width: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .linksContainer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contactInfo {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .linksContainer {
+        grid-template-columns: 1fr;
+    }
+}
