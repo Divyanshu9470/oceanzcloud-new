@@ -2,7 +2,22 @@ import { PrismaClient } from '@prisma/client'
 
 const globalForPrisma = globalThis as unknown as { prismaV2: PrismaClient }
 
-export const prisma = globalForPrisma.prismaV2 || new PrismaClient()
+let prismaInstance: PrismaClient;
+
+try {
+    prismaInstance = globalForPrisma.prismaV2 || new PrismaClient();
+} catch (e) {
+    console.warn("Failed to instantiate Prisma Client (likely due to missing env vars in build). This is expected during build if DB is not configured.", e);
+    // Create a fallback proxy that throws on usage, effectively deferring the error to runtime
+    prismaInstance = new Proxy({} as PrismaClient, {
+        get(_target, prop) {
+            if (prop === 'then') return undefined; // Promise safety
+            throw new Error(`Prisma Client was not correctly instantiated. Check DATABASE_URL environment variable. Error: ${e}`);
+        }
+    });
+}
+
+export const prisma = prismaInstance;
 
 if (process.env.NODE_ENV !== 'production') globalForPrisma.prismaV2 = prisma
 
