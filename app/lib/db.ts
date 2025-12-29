@@ -1,3 +1,5 @@
+import { PrismaClient } from "@prisma/client";
+
 const prismaClientSingleton = () => {
     // Determine if we're in a build context (this heuristic might need adjustment but usually sufficient)
     // Or simply check for the Env Var.
