@@ -84,7 +84,7 @@ export default async function AdminPage() {
                             </tr>
                         </thead>
                         <tbody>
-                            {jobApps.map(app => (
+                            {jobApps.map((app: any) => (
                                 <tr key={app.id}>
                                     <td>{new Date(app.createdAt).toLocaleDateString()}</td>
                                     <td>{app.name}</td>
@@ -113,7 +113,7 @@ export default async function AdminPage() {
                             </tr>
                         </thead>
                         <tbody>
-                            {contacts.map(msg => (
+                            {contacts.map((msg: any) => (
                                 <tr key={msg.id}>
                                     <td>{new Date(msg.createdAt).toLocaleDateString()}</td>
                                     <td>{msg.name}<br /><span className={styles.sub}>{msg.company}</span></td>
@@ -138,7 +138,7 @@ export default async function AdminPage() {
                             </tr>
                         </thead>
                         <tbody>
-                            {demos.map(req => (
+                            {demos.map((req: any) => (
                                 <tr key={req.id}>
                                     <td>{new Date(req.createdAt).toLocaleDateString()}</td>
                                     <td>{req.email}</td>

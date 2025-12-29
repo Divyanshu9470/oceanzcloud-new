@@ -1,6 +1,8 @@
 import { JobCard } from '../components/ui/JobCard';
 import styles from './page.module.css';
 
+export const dynamic = 'force-dynamic';
+
 // This is a Server Component
 async function getJobs() {
     const { db } = await import('../lib/db');
