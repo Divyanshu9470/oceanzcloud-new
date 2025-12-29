@@ -4,7 +4,7 @@ import './globals.css'
 import { Header } from './components/layout/Header'
 import { Footer } from './components/layout/Footer'
 import { ChatWidget } from './components/ui/ChatWidget'
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/next"
 
 const manrope = Manrope({
   subsets: ['latin'],
