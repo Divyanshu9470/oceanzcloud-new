@@ -6,6 +6,8 @@ export const metadata = {
     title: 'Admin Dashboard | OceanzCloud',
 };
 
+export const dynamic = 'force-dynamic';
+
 async function getStats() {
     const jobs = await prisma.jobApplication.count();
     const contacts = await prisma.contactSubmission.count();
