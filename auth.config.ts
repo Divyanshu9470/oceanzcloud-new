@@ -4,10 +4,6 @@ export const authConfig = {
     pages: {
         signIn: '/api/auth/signin',
     },
-    providers: [
-        // Providers will be overridden in auth.ts for the main app
-        // Included here for Edge compatibility if needed (e.g. non-database providers)
-    ],
     callbacks: {
         authorized({ auth, request: { nextUrl } }) {
             const isLoggedIn = !!auth?.user;
@@ -20,4 +16,5 @@ export const authConfig = {
             return true;
         },
     },
+    providers: [], // Add providers with an empty array for now
 } satisfies NextAuthConfig;

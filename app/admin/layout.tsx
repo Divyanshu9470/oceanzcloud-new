@@ -1,10 +1,9 @@
 import React from 'react';
+export const dynamic = 'force-dynamic';
 import { auth } from '@/auth';
 import { redirect } from 'next/navigation';
 import Link from 'next/link';
 import { Button } from '../components/ui/Button';
-
-export const dynamic = 'force-dynamic';
 
 export default async function AdminLayout({
     children,

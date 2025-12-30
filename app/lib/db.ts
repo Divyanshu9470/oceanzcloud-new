@@ -1,28 +1,14 @@
-const prismaClientSingleton = () => {
-    // Determine if we're in a build context (this heuristic might need adjustment but usually sufficient)
-    // Or simply check for the Env Var.
-    // Note: Vercel build might have the var if configured, but if it fails, let's be safe.
-    if (!process.env.DATABASE_URL) {
-        console.warn("⚠️ DATABASE_URL is missing. Returning a placeholder Prisma Client to prevent build crash.");
-        return new Proxy({} as PrismaClient, {
-            get(_target, prop) {
-                if (prop === 'then') return undefined;
-                if (prop === '$connect') return async () => { }; // Fake connect
-
-                throw new Error(`Prisma Client cannot be used because DATABASE_URL is missing. This is expected during build if not querying data.`);
-            }
-        });
-    }
-    return new PrismaClient();
-};
+import { PrismaClient } from '@prisma/client'
 
 const globalForPrisma = globalThis as unknown as { prismaV2: PrismaClient }
 
-// Init
-export const prisma = globalForPrisma.prismaV2 || prismaClientSingleton();
+let prismaInstance: PrismaClient;
+
+prismaInstance = globalForPrisma.prismaV2 || new PrismaClient();
+
+export const prisma = prismaInstance;
 
 if (process.env.NODE_ENV !== 'production') globalForPrisma.prismaV2 = prisma
-
 
 // Re-export types (mapped from Prisma or defined manually if needed for compatibility)
 export type Job = {

@@ -1,4 +1,5 @@
 import { JobCard } from '../components/ui/JobCard';
+export const dynamic = 'force-dynamic';
 import styles from './page.module.css';
 
 // This is a Server Component

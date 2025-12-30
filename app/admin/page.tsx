@@ -1,12 +1,11 @@
 import { prisma } from '../lib/db';
+export const dynamic = 'force-dynamic';
 import styles from './styles.module.css';
 import Link from 'next/link';
 
 export const metadata = {
     title: 'Admin Dashboard | OceanzCloud',
 };
-
-export const dynamic = 'force-dynamic';
 
 async function getStats() {
     const jobs = await prisma.jobApplication.count();
